@@ -1,33 +1,17 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import useCart from '../../hooks/useCart';
+import useProducts from '../../hooks/useProducts';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 
 const Shop = () => {
-    // products loads 
-    const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
-
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
-
-    useEffect(() => {
-        const storedCard = getStoredCart();
-        const savedCart = [];
-        for (const id in storedCard) {
-            const addedProduct = products.find(product => product.id === id);
-            if (addedProduct) {
-                const quentity = storedCard[id];
-                addedProduct.quentity = quentity;
-                savedCart.push(addedProduct);
-            }
-        }
-        setCart(savedCart);
-    }, [products]);
+    const [products, setProducts] = useProducts();
+    const [cart, setCart] = useCart(products);
 
     const handleAddToCart = (selectedProduct) => {
         // console.log(selectedProduct)
@@ -52,10 +36,16 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}>
+                    <Link to='/orders'>
+                        <button className='reveiw-order-btn'>Review Order
+                            <FontAwesomeIcon className='order-icon' icon={faArrowRight}></FontAwesomeIcon>
+                        </button>
+                    </Link>
+                </Cart>
             </div>
         </div>
     );
 };
 
-export default Shop; <h2>this is shop components</h2>
+export default Shop; 

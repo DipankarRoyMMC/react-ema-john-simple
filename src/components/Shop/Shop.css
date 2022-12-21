@@ -23,3 +23,27 @@ p{
     padding: 15px;
 
 }
+.cart-container a{
+    text-decoration: none;
+}
+
+.reveiw-order-btn, .proceed-checkout-btn{
+    background-color: #FF9900;
+    color: #FFF;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.proceed-checkout-btn{
+    justify-content: space-between;
+}
+.reveiw-order-btn .order-icon {
+    margin-left: 5px;
+}

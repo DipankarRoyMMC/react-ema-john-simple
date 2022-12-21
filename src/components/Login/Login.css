@@ -1,0 +1,95 @@
+.form-container{
+    width: 500px;
+    margin: 30px auto;
+    background: #FFFFFF;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+.form-container input{
+    width: 100%;
+}
+
+.form-wrap{
+    width: 100%;
+}
+
+    .form-title{
+        font-size: 35px;
+        color: #2A414F;
+        text-align: center;
+        font-weight: 400;
+    }
+    .input-group label{
+        font-size: 14px;
+       display: block;
+        font-size: 17px;
+        color:  #2A414F;
+        margin-bottom: 10px;
+    }
+    .input-group input{
+        border: 1px solid #95A0A7;
+        border-radius: 5px;
+        padding: 10px;
+        outline: none;
+        margin-bottom: 10px;
+
+    }
+
+    .form-submit{
+        background: rgba(255, 153, 0, 0.3);
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 15px;
+    }
+    .form-submit:hover{
+        background: rgba(255, 153, 0, 0.5);
+
+    }
+    .form-container p{
+        font-size: 14px;
+        text-align: center;
+    }
+    .form-link{
+        color:  #FF9900
+    }
+
+    .border-line{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .border-line div{        
+        border: 1px solid #95A0A7;
+        height: 0;
+        width: 100%;
+        border-bottom: 0;
+    }
+    .border-line span{        
+        margin: 0 20px;
+        color: #95A0A7;
+        font-size: 17px;
+    }
+
+    .google-btn{
+        background: #FFFFFF;
+        border: 1px solid #95A0A7;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 8px;
+        cursor: pointer;
+        font-size: 17px;
+        color:  #2A414F;
+        margin-top: 20px;
+    }
+    .google-btn img{
+        margin-right: 10px;
+    }
