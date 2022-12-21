@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import gogoleLogo from '../../images/images.png';
 import { useState } from 'react';
@@ -14,6 +14,13 @@ const Login = () => {
 
     const navigate = useNavigate();
 
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
+
     const handleEmailBlur = (event) => {
         setEmail(event.target.value);
     }
@@ -21,9 +28,6 @@ const Login = () => {
         setPassword(event.target.value);
     }
 
-    if (user) {
-        navigate('/shop');
-    }
 
     const handleUserSignIn = (event) => {
         event.preventDefault();
